@@ -1,15 +1,15 @@
 import { checkToken } from '../../utilities/users-service'
 
-export default function OrderHistoryPage() {
+export default function MeProfilePage({ user }) {
     async function handleCheckToken() {
         const expDate = await checkToken()
         console.log(expDate)
     }
 
     return (
-        <>
-            <h1>OrderHistoryPage</h1>
-            <button onClick={handleCheckToken}>Check When My Login Expires</button>
-        </>
+        <main>
+            <h1>{user.name}</h1>
+            <h2>{user.email}</h2>
+        </main>
     )
 }
