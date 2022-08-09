@@ -20,11 +20,11 @@ const profileSchema = new mongoose.Schema({
     img: {
         type: String,
     },
-    user: {
-        type: Schema.Types.ObjectId, 
-        ref: 'User', 
-        required: true
-    }
+    // user: {
+    //     type: Schema.Types.ObjectId, 
+    //     ref: 'User', 
+    //     required: true
+    // }
   }, {
     timestamps: true
   });
