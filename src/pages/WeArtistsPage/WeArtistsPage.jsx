@@ -1,3 +1,7 @@
-export default function WeArtistsPage() {
-    return <h1>WeArtists</h1>
+
+
+export default function WeArtistsPage({ profiles }) {
+    return (
+        <h1>WeArtists</h1>
+    );
 }

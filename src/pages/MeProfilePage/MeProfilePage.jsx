@@ -1,15 +1,12 @@
-import { checkToken } from '../../utilities/users-service'
+import ProfileForm from "../../components/ProfileForm/ProfileForm";
 
 export default function MeProfilePage({ user }) {
-    async function handleCheckToken() {
-        const expDate = await checkToken()
-        console.log(expDate)
-    }
 
     return (
         <main>
             <h1>{user.name}</h1>
             <h2>{user.email}</h2>
+            <ProfileForm user={user}/>
         </main>
     )
 }
