@@ -1,0 +1,38 @@
+import { useEffect, useState } from "react";
+import RsvpForm from "../../components/RsvpForm/RsvpForm"
+import RsvpList from "../../components/RsvpList/RsvpList";
+import { index } from "../../utilities/rsvps-api";
+import { rsvp } from "../../utilities/rsvps-service";
+// Should populate will toggle allowing a re-render ONLY while true --- essentially I use this to re-render my list after I click the form submit button.
+export default function RsvpPage() {
+  const [shouldPopulate, setShouldPopulate] = useState(true)
+  const [rsvps, setRsvps] = useState([])
+  useEffect(()=>{
+    async function fetchdata(){
+      const rsvpList = await index()
+      setRsvps(rsvpList)
+    }
+    if (shouldPopulate){
+      fetchdata()
+      setShouldPopulate(false)
+    }
+  }, [shouldPopulate])
+    const onSubmit = async (evt) => {
+        evt.preventDefault();
+        
+        const payload = {
+          name: evt.target.elements.name.value,
+          plusOne: evt.target.elements.plusOne.value 
+        }
+    
+      await rsvp(payload)
+      setShouldPopulate(true)
+    } 
+    return (
+      <>
+        <h1>This is the RSVP Page</h1>
+        <RsvpForm onSubmit={onSubmit}/>
+        <RsvpList rsvps={rsvps}/>
+      </>
+    )
+}

@@ -9,5 +9,5 @@ const Profile = require('./models/profile');
 // const Order = require('./models/order');
 
 // Local variables will come in handy for holding retrieved documents
-let user, profile, category, order;
-let users, profiles, categories, orders;
+let user, profile;
+let users, profiles;

@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
+// import { profiles } from "../WeArtistsPage/WeArtistsPage"
 
-export default function WeArtistsPage({ profiles }) {
+export default function WeArtistsDetailPage({ profiles }) {
     let { profileName } = useParams();
+    console.log("ArtistDetailPage profiles: ", profiles);
 
     let profile = profiles.find((prof) => prof.name === profileName);
 
@@ -10,7 +12,7 @@ export default function WeArtistsPage({ profiles }) {
             <br></br>
             <div>
                 <img src={`${profile.img}`} alt="" />
-                <h1>{profile.name}</h1>
+                <h1>{profileName}</h1>
             </div>
         </>
     );

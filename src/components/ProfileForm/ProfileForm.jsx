@@ -1,32 +1,27 @@
 import { useState } from 'react';
-// import * as usersService from '../../utilities/users-service';
+import { createProfile } from '../../utilities/profiles-api';
 
-export default function ProfileForm({ addProfile }) {
+export default function ProfileForm({ user, profile, setProfile }) {
   const [newProfile, setNewProfile] = useState({
     name: '',
     artist: '',
     genre: '',
     spotifyLink: '',
     img: '',
+    created: true,
+    user: ''
   });
-  // const [error, setError] = useState('');
 
-  function handleAddProfile(evt) {
-    console.log(evt.target.value);
+  async function handleAddProfile(evt) {
     evt.preventDefault();
-    addProfile(newProfile);
-    setNewProfile({
-      name: '',
-      artist: '',
-      genre: '',
-      spotifyLink: '',
-      img: '',
-    });
+    const updatedProfile = {...newProfile, user: user._id}
+    const profile = await createProfile(updatedProfile);
+    setProfile(profile);
+    console.log("Handle Add Profile from ProfileForm: ", profile);
   }
 
   function handleChange(evt) {
-    const newFormData = { ...newProfile, [evt.target.name]: evt.target.value };
-    setNewProfile(newFormData);
+    setNewProfile({ ...newProfile, [evt.target.name]: evt.target.value });
   }
 
   return (
@@ -39,30 +34,34 @@ export default function ProfileForm({ addProfile }) {
       <form onSubmit={handleAddProfile} >
         <label>Name</label> {/* Artist name */}
         <input 
+          name="name"
           value={newProfile.name}
           onChange={handleChange}
           placeholder='Username'/>
         <label>Artist</label> {/* Artist name */}
         <input
+          name="artist"
           value={newProfile.artist}
           onChange={handleChange} 
           placeholder='Artist Name'/>
         <label>Genre</label> {/* Users created music type */}
-        <select value={newProfile.genre} onChange={handleChange}>
-          <option value={1}>Hip-Hop</option>
-          <option value={2}>Country</option>
-          <option value={3}>Jazz</option>
+        <select name="genre" value={newProfile.genre} onChange={handleChange}>
+          <option value={"Hip-Hop"}>Hip-Hop</option>
+          <option value={"Country"}>Country</option>
+          <option value={"Jazz"}>Jazz</option>
         </select>
         <label>Spotify</label> {/* Artist name */}
         <input
+          name="spotifyLink"
           value={newProfile.spotifyLink} 
           onChange={handleChange}
           placeholder='Paste Spotify Link Here'/>
         <label>Profile Pic</label> {/* Artist name */}
         <input
+          name="img"
           value={newProfile.img}
           onChange={handleChange} 
-          placeholder='Selet a File'/>
+          placeholder='Select a File'/>
         <button type="submit" >Create Profile</button>
       </form>
     </>
