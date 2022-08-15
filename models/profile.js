@@ -12,16 +12,12 @@ const profileSchema = new mongoose.Schema({
     },
     genre: {
         type: String,
-        required: true
     },
     spotifyLink: {
         type: String,
     },
     img: {
         type: String,
-    },
-    created: {
-        type: Boolean,
     },
     user: {
         type: Schema.Types.ObjectId, 

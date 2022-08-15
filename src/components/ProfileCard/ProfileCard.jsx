@@ -5,7 +5,7 @@ export default function ProfileCard(props) {
         <>
             <Link to={`/artists/${props.profile.name}`}>
                 <div 
-                className="item-card"
+                // className="item-card"
                 style={{ backgroundImage: `url(${props.profile.img})` }}>
                     <div className="title">
                         <h1>{props.profile.name}</h1>

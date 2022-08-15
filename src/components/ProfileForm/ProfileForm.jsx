@@ -8,8 +8,7 @@ export default function ProfileForm({ user, profile, setProfile }) {
     genre: '',
     spotifyLink: '',
     img: '',
-    created: true,
-    user: ''
+    user: '',
   });
 
   async function handleAddProfile(evt) {
