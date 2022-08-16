@@ -24,7 +24,7 @@ export default function MessageItem({ message, messages, setMessages}) {
     <main >
       <ul>
           <button onClick={() => onDelete(message._id)}>X</button>
-          {message.fromUser}: {message.content}
+          <span className="from-user">{message.fromUser}: <span className="from-user-message">{message.content}</span></span>
         <hr />
         <br />
       </ul>

@@ -58,6 +58,20 @@
   justify-content: space-evenly;
 }
 
+.from-user {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.from-user-message {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.message-item {
+  text-align: left;
+}
+
 
 
 

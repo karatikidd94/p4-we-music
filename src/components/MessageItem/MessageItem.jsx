@@ -25,7 +25,7 @@ export default function MessageItem({ message, messages, setMessages}) {
       <ul>
           <button onClick={() => onDelete(message._id)}>X</button>
           <button onClick={() => setShowEdit(!showEdit)}>Edit</button>
-          {message.fromUser}: {message.content}
+          <span className="from-user">{message.fromUser}: <span className="from-user-message">{message.content}</span></span>
         {
           showEdit ?
           <EditMessagingForm onEdit={onEdit} />
