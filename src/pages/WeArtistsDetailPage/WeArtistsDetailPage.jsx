@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import MessagingForm from "../../components/MessagingForm/MessagingForm";
 import MessageList from "../../components/MessageList/MessageList";
-import ProfileCard from "../../components/ProfileCard/ProfileCard";
+import DetailCard from "../../components/ProfileCard/ProfileCard";
+import "./WeArtistsPage.css"
 
 export default function WeArtistsDetailPage({ user, profiles, messages, setMessages }) {
     let { profileName } = useParams();
@@ -16,8 +17,7 @@ export default function WeArtistsDetailPage({ user, profiles, messages, setMessa
             <br></br>
             <div className="details-page">
                 <div>
-                    {/* <img src={`${profile.img}`} alt="" /> */}
-                    <ProfileCard profile={profile}/>
+                    <DetailCard profile={profile}/>
                 </div>
                 <div>
                     <div>

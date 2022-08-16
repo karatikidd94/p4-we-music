@@ -26,7 +26,7 @@ async function deleteMessage(req, res) {
 }
 
 async function update(req, res) {
-    console.log("Controller Update message: ", req.body)
-    // const updatedMessage = await Message.findByIdAndUpdate(req.params.id, req.body);
-    // res.json(updatedMessage);
+    console.log("Controller Update message: ", req.body);
+    const updatedMessage = await Message.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.json(updatedMessage);
   }

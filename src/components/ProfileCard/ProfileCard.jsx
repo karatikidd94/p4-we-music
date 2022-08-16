@@ -4,7 +4,7 @@ export default function ProfileCard(props) {
     return (
         <>
             <Link to={`/artists/${props.profile.name}`}>
-                <div className="card card:hover">
+                <div className="card">
                     <div>
                         <div>
                             <img src={`${props.profile.img}`} alt="" />

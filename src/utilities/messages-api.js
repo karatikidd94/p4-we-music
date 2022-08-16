@@ -6,8 +6,8 @@ export function getAll() {
     return sendRequest(BASE_URL);
 }
 
-export function editMessage(message) {
-    return sendRequest(`${BASE_URL}/${message._id}`, 'PUT', message);
+export function editMessage(message, content) {
+    return sendRequest(`${BASE_URL}/${message._id}`, 'PUT', content);
 }
 
 export function deleteMessage(messageId) {

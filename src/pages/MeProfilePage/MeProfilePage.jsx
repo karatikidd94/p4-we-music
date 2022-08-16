@@ -12,12 +12,18 @@ export default function MeProfilePage({ user, profile, setProfile, messages }) {
                  profile ?
                 <>
                     <br />
-                    <img src={`${profile.img}`} alt="" />
-                    <h1>{profile.name}</h1>
-                    <h1>Artist Name: {profile.artist}</h1>
-                    <h2>Genre: {profile.genre}</h2>
-                    <h2>Spotify Link: {profile.spotifyLink}</h2>
-                    <UserMessageList user={user} messages={messages} profile={profile} />
+                    <div className="profile-page">
+                        <div className="profile-card">
+                            <img src={`${profile.img}`} alt="" />
+                            <h1>{profile.name}</h1>
+                            <h1>Artist Name: {profile.artist}</h1>
+                            <h2>Genre: {profile.genre}</h2>
+                            <h2>Spotify Link: {profile.spotifyLink}</h2>
+                        </div>
+                        <div>
+                            <UserMessageList user={user} messages={messages} profile={profile} />
+                        </div>
+                    </div>
                 </>
                 :
                 <>

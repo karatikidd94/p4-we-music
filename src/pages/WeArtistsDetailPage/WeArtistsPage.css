@@ -12,26 +12,12 @@
   width: 20vw;
   padding-top: 2vh;
   border: black;
-  border-radius: 10px;
+  border-radius: 5px;
   border-style: solid;
 }
 
 .card:hover {
   transform: scale(1.1);
-}
-
-.profile-card {
-  background-color: lightgray;
-  width: 20vw;
-  padding-top: 2vh;
-  border: black;
-  border-radius: 10px;
-  border-style: solid;
-}
-
-.profile-page {
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .messages-list {

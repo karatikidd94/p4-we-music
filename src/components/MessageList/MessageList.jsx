@@ -11,7 +11,7 @@ export default function MessageList({ user, setMessages, messages, profile }) {
             <h1>Messages</h1>
             <div>
               {messages.map((message, idx) => {
-                if(profile._id == message.toUser && user._id == message.fromUser) {
+                if(profile._id == message.toUserId && user._id == message.fromUserId) {
                   return <MessageItem key={message._id} message={message} messages={messages} setMessages={setMessages} />
                 }
               })}

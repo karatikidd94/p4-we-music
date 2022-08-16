@@ -3,19 +3,20 @@ import { createMessage } from '../../utilities/messages-api';
 
 export default function MessagingForm({ user, profile, setMessages, messages }) {
   const [ newMessage, setNewMessage ] = useState({
+    fromUserId: '',
     fromUser: '',
+    toUserId: '',
     toUser: '',
     content: '',
 });
 
 async function handleAddMessage(evt) {
   evt.preventDefault();
-  const updatedMessage = {...newMessage, fromUser: user._id, toUser: profile._id}
+  const updatedMessage = {...newMessage, fromUserId: user._id, fromUser: user.name, toUserId: profile._id, toUser: profile.name}
   const message = await createMessage(updatedMessage);
   console.log("Handle Add Profile from ProfileForm: ", message);
   setMessages([ ...messages, message ]);
-  setNewMessage({ fromUser: '', toUser: '', content: '' });
-  // alert("Send This Message")
+  setNewMessage({ fromUserId: '', fromUser: '', toUserId: '', toUser: '', content: '' });
 }
 
 function handleChange(evt) {
