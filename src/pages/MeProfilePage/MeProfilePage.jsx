@@ -1,4 +1,4 @@
-// import ProfileCard from "../../components/ProfileCard/ProfileCard";
+import { Link } from 'react-router-dom'; 
 import ProfileForm from "../../components/ProfileForm/ProfileForm";
 import UserMessageList from "../../components/UserMessageList/UserMessageList";
 
@@ -18,7 +18,10 @@ export default function MeProfilePage({ user, profile, setProfile, messages }) {
                             <h1>{profile.name}</h1>
                             <h1>Artist Name: {profile.artist}</h1>
                             <h2>Genre: {profile.genre}</h2>
-                            <h2>Spotify Link: {profile.spotifyLink}</h2>
+                            <a href={`${profile.spotifyLink}`} target="_blank" rel="noreferrer">
+                                <button>Spotify</button>
+                            </a>
+                            
                         </div>
                         <div>
                             <UserMessageList user={user} messages={messages} profile={profile} />
