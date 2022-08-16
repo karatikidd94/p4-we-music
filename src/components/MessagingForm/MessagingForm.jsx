@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createMessage } from '../../utilities/messages-api';
 
-export default function MessagingForm({ user, profile, setMessages }) {
+export default function MessagingForm({ user, profile, setMessages, messages }) {
   const [ newMessage, setNewMessage ] = useState({
     fromUser: '',
     toUser: '',
@@ -13,7 +13,8 @@ async function handleAddMessage(evt) {
   const updatedMessage = {...newMessage, fromUser: user._id, toUser: profile._id}
   const message = await createMessage(updatedMessage);
   console.log("Handle Add Profile from ProfileForm: ", message);
-  setMessages(message);
+  setMessages([ ...messages, message ]);
+  setNewMessage({ fromUser: '', toUser: '', content: '' });
   // alert("Send This Message")
 }
 
@@ -30,6 +31,7 @@ function handleChange(evt) {
           name="content"
           value={newMessage.content}
           onChange={handleChange}
+          placeholder={''}
           />
           <button type="submit">Send</button>
         </form>

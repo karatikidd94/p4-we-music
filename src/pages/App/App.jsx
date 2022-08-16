@@ -23,32 +23,32 @@ export default function App() {
       async function getProfile() {
         const profile = await profilesAPI.getProfile();
         setProfile(profile);
-        console.log("App useEffect profile: ", profile);
       }
       getProfile();
     }
-
+    
   }, [user]);
-
-
-    useEffect(function() {
-        async function getProfiles() {
-            const profiles = await profilesAPI.getAll();
-            setProfiles(profiles);
-        }
-        getProfiles();
-    }, []);
-
-    useEffect(function() {
-      async function getMessages() {
-        const messages = await messagesAPI.getAll();
-        setMessages(messages);
-      }
-      getMessages();
-    }, []);
-
-    console.log("App useEffect profiles: ", profiles);
-    console.log("App useEffect Messages: ", messages);
+  
+  
+  useEffect(function() {
+    async function getProfiles() {
+      const profiles = await profilesAPI.getAll();
+      setProfiles(profiles);
+    }
+    getProfiles();
+  }, []);
+  
+  useEffect(function() {
+    async function getMessages() {
+      const messages = await messagesAPI.getAll();
+      setMessages(messages);
+    }
+    getMessages();
+  }, []);
+  
+  // console.log("App useEffect profile: ", profile);
+  // console.log("App useEffect profiles: ", profiles);
+  // console.log("App useEffect Messages: ", messages);
 
   return (
     <main className="App">

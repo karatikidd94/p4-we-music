@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MessageItem from "../MessageItem/MessageItem";
 
-export default function MessageList({ user, messages, profile }) {
+export default function MessageList({ user, setMessages, messages, profile }) {
     console.log("MessageList messages: ", messages);
     console.log("MessageList profile: ", profile);
     
@@ -12,7 +12,7 @@ export default function MessageList({ user, messages, profile }) {
           <div>
             {messages.map((message, idx) => {
               if(profile._id == message.toUser && user._id == message.fromUser) {
-                return <MessageItem key={message._id} message={message} />
+                return <MessageItem key={message._id} message={message} messages={messages} setMessages={setMessages} />
               }
             })}
           </div>

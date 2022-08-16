@@ -4,6 +4,7 @@ module.exports = {
     index,
     create,
     delete: deleteMessage,
+    update,
 }
 
 async function index(req, res) {
@@ -23,3 +24,9 @@ async function deleteMessage(req, res) {
     const message = await Message.findOneAndDelete(req.params.id);
     res.json(message);
 }
+
+async function update(req, res) {
+    console.log("Controller Update message: ", req.body)
+    // const updatedMessage = await Message.findByIdAndUpdate(req.params.id, req.body);
+    // res.json(updatedMessage);
+  }
