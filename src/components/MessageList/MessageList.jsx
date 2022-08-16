@@ -6,18 +6,17 @@ export default function MessageList({ user, setMessages, messages, profile }) {
     console.log("MessageList profile: ", profile);
     
       return (
-        <main >
-        <div>
-          <h1>Messages</h1>
-          <div>
-            {messages.map((message, idx) => {
-              if(profile._id == message.toUser && user._id == message.fromUser) {
-                return <MessageItem key={message._id} message={message} messages={messages} setMessages={setMessages} />
-              }
-            })}
+        <main>
+          <div className="messages-list">
+            <h1>Messages</h1>
+            <div>
+              {messages.map((message, idx) => {
+                if(profile._id == message.toUser && user._id == message.fromUser) {
+                  return <MessageItem key={message._id} message={message} messages={messages} setMessages={setMessages} />
+                }
+              })}
+            </div>
           </div>
-          
-        </div>
-      </main>
+        </main>
     );
 }

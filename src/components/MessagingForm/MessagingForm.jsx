@@ -25,13 +25,14 @@ function handleChange(evt) {
   return (
     <div>
       <div>
-        <form onSubmit={handleAddMessage}>
-          <label>Message</label>
+        <form onSubmit={handleAddMessage} className="message-form">
+          <label className='message-form-label'>Message</label>
           <input 
           name="content"
           value={newMessage.content}
           onChange={handleChange}
           placeholder={''}
+          className="message-form-input"
           />
           <button type="submit">Send</button>
         </form>

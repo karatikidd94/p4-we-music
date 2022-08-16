@@ -14,15 +14,19 @@ export default function WeArtistsDetailPage({ user, profiles, messages, setMessa
     return (
         <>
             <br></br>
-            <div>
-                {/* <img src={`${profile.img}`} alt="" /> */}
-                <ProfileCard profile={profile}/>
-            </div>
-            <div>
-                <MessageList user={user} messages={messages} setMessages={setMessages} profile={profile} />
-            </div>
-            <div>
-                <MessagingForm user={user} profile={profile} messages={messages} setMessages={setMessages} />
+            <div className="details-page">
+                <div>
+                    {/* <img src={`${profile.img}`} alt="" /> */}
+                    <ProfileCard profile={profile}/>
+                </div>
+                <div>
+                    <div>
+                        <MessageList user={user} messages={messages} setMessages={setMessages} profile={profile} />
+                    </div>
+                    <div>
+                        <MessagingForm user={user} profile={profile} messages={messages} setMessages={setMessages} />
+                    </div>
+                </div>
             </div>
         </>
     );
