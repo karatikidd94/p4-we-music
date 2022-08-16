@@ -6,18 +6,22 @@ import "./WeArtistsPage.css"
 
 export default function WeArtistsDetailPage({ user, profiles, messages, setMessages }) {
     let { profileName } = useParams();
-    // console.log("ArtistDetailPage profiles: ", profiles);
-    // console.log("ArtistDetailPage messages: ", messages);
     
-
     let profile = profiles.find((prof) => prof.name === profileName);
 
     return (
         <>
             <br></br>
             <div className="details-page">
-                <div>
-                    <DetailCard profile={profile}/>
+                <div className="profile-card">
+                    {/* <DetailCard profile={profile}/> */}
+                    <img src={`${profile.img}`} alt="" />
+                    <h1>{profile.name}</h1>
+                    <h1>Artist Name: {profile.artist}</h1>
+                    <h2>Genre: {profile.genre}</h2>
+                    <a href={`${profile.spotifyLink}`} target="_blank" rel="noreferrer">
+                        <button>Spotify</button>
+                    </a>
                 </div>
                 <div>
                     <div>
