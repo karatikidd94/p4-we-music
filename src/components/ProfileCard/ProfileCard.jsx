@@ -8,9 +8,9 @@ export default function ProfileCard(props) {
                     <div>
                         <div>
                             <img src={`${props.profile.img}`} alt="" />
-                            <h1>{props.profile.name}</h1>
-                            <h1>{props.profile.artist}</h1>
-                            <h3>{props.profile.genre}</h3>
+                            <h1>Name: {props.profile.name}</h1>
+                            <h1>Artist: {props.profile.artist}</h1>
+                            <h3>Genre: {props.profile.genre}</h3>
                         </div>
                     </div>
                 </div>
