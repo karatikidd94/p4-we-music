@@ -30,6 +30,7 @@ https://www.notion.so/WePlan-3434eeaf3e064fb7a0777436d9748abe
 **Unsolved Problems:** 
 - User can delete message sent to them.
 - Page doesnt reset correctly
+- Styling
 
 **Future Enhancements:**
 - Audio File Upload
