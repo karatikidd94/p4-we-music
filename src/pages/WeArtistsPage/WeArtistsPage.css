@@ -9,6 +9,7 @@
 .card {
   background-color: lightgray;
   margin: auto;
+  margin-bottom: 20px;
   width: 20vw;
   padding-top: 2vh;
   border: black;
