@@ -21,8 +21,8 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
-  padding: 2vmin;
+  background-color: #007E7E;
+  /* padding: 2vmin; */
   height: 100vh;
 }
 
@@ -83,6 +83,8 @@ code {
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
+  width: 60vw;
+  margin: auto;
 }
 
 p.error-message {
@@ -90,12 +92,12 @@ p.error-message {
   text-align: center;
 }
 
-/* form {
+form {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
   color: var(--text-light);
-} */
+}
 
 label {
   font-size: 2vmin;
@@ -121,7 +123,7 @@ button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: #007E7E;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
@@ -150,4 +152,8 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+
+h1 {
+  color: white;
 }

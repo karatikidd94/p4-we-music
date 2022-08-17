@@ -57,7 +57,7 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/artists" element={<WeArtistsPage user={user} profiles={profiles} />} />
+            <Route path="/" element={<WeArtistsPage user={user} profiles={profiles} />} />
             <Route path="/artists/:profileName" element={<WeArtistsDetailPage user={user} profiles={profiles} messages={messages} setMessages={setMessages}  />} />
             <Route path="/profile" element={<MeProfilePage user={user} setProfile={setProfile} profile={profile} messages={messages} />} />
           </Routes>

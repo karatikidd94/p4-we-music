@@ -1,0 +1,19 @@
+.navbar {
+    background-color: #303A4A;
+    color: white;
+    height: 40px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.nav-logo {
+    margin-right: 20px;
+}
+
+.welcome-user {
+    align-items: right;
+}
+
+.link {
+    color: white;
+}
