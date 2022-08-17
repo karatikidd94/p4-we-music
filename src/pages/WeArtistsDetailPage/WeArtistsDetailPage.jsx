@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import MessagingForm from "../../components/MessagingForm/MessagingForm";
 import MessageList from "../../components/MessageList/MessageList";
 import DetailCard from "../../components/ProfileCard/ProfileCard";
-import "./WeArtistsPage.css"
+import "./WeArtistsDetailPage.css"
 
 export default function WeArtistsDetailPage({ user, profiles, messages, setMessages }) {
     let { profileName } = useParams();
@@ -14,11 +14,11 @@ export default function WeArtistsDetailPage({ user, profiles, messages, setMessa
             <br></br>
             <div className="details-page">
                 <div className="profile-card">
-                    {/* <DetailCard profile={profile}/> */}
                     <img src={`${profile.img}`} alt="" />
                     <h1>{profile.name}</h1>
                     <h1>Artist Name: {profile.artist}</h1>
                     <h2>Genre: {profile.genre}</h2>
+                    <h2>Email: </h2>
                     <a href={`${profile.spotifyLink}`} target="_blank" rel="noreferrer">
                         <button>Spotify</button>
                     </a>

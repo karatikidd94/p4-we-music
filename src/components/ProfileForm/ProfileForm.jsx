@@ -16,7 +16,6 @@ export default function ProfileForm({ user, profile, setProfile }) {
     const updatedProfile = {...newProfile, user: user._id}
     const profile = await createProfile(updatedProfile);
     setProfile(profile);
-    console.log("Handle Add Profile from ProfileForm: ", profile);
   }
 
   function handleChange(evt) {

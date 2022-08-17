@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './EditMessageForm.css';
 
 export default function EditMessagingForm({ onEdit }) {
     const [ formData, setFormData ] = useState({
@@ -21,8 +22,8 @@ export default function EditMessagingForm({ onEdit }) {
 
     return (
         <form onSubmit={handleSubmit} >
-            <input name='content' value={formData.content} onChange={handleChange}></input>
-            <button type="submit">Save</button>
+            <input className='input-btn' name='content' value={formData.content} onChange={handleChange}></input>
+            <button className='save-btn' type="submit">Save</button>
           </form>
     )
 }

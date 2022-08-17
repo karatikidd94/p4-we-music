@@ -3,7 +3,6 @@ import UserMessageList from "../../components/UserMessageList/UserMessageList";
 
 
 export default function MeProfilePage({ user, profile, setProfile, messages }) {
-    console.log("ProfilePage Profile: ", profile);
 
     return (
         <main>

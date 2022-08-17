@@ -2,9 +2,6 @@ import { useState } from "react";
 import MessageItem from "../MessageItem/MessageItem";
 
 export default function MessageList({ user, setMessages, messages, profile }) {
-    console.log("MessageList messages: ", messages);
-    console.log("MessageList profile: ", profile);
-    
       return (
         <main>
           <div className="messages-list">
