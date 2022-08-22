@@ -5,7 +5,7 @@ import ProfileCard from "../../components/ProfileCard/ProfileCard";
 export default function WeArtistsPage({ user, profiles }) {
     return (
         <>
-            <h1>WeArtists</h1>
+            <h1 className="align-ctr">WeArtists</h1>
             <div className="container">
                 {profiles.map((profile, idx) => {
                     if(profile.user != user._id) {

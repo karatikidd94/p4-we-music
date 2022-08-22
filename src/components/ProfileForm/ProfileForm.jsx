@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { createProfile } from '../../utilities/profiles-api';
 
 export default function ProfileForm({ user, profile, setProfile }) {
@@ -54,13 +54,20 @@ export default function ProfileForm({ user, profile, setProfile }) {
           value={newProfile.spotifyLink} 
           onChange={handleChange}
           placeholder='Paste Spotify Link Here'/>
-        <label>Profile Pic</label> {/* Artist name */}
+        <label>Profile Pic</label> 
         <input
           name="img"
           value={newProfile.img}
           onChange={handleChange} 
           placeholder='Select a File'/>
         <button type="submit" >Create Profile</button>
+        {/* <label for="avatar">Choose a profile picture:</label><br />
+        <input type="file"
+              name="img"
+              value={newProfile.img}
+              onChange={handleChange}
+              accept="image/png, image/jpeg"></input>
+        <button type="submit" >Create Profile</button> */}
       </form>
     </>
   );

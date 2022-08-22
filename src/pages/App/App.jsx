@@ -7,6 +7,7 @@ import AuthPage from '../AuthPage/AuthPage'
 import MeProfilePage from '../MeProfilePage/MeProfilePage'
 import WeArtistsDetailPage from '../WeArtistsDetailPage/WeArtistsDetailPage'
 import NavBar from '../../components/NavBar/NavBar'
+import UploadPage from '../UploadPage/UploadPage'
 import * as profilesAPI from '../../utilities/profiles-api'
 import * as messagesAPI from '../../utilities/messages-api'
 
@@ -57,9 +58,10 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/" element={<WeArtistsPage user={user} profiles={profiles} />} />
+            <Route path="/artists" element={<WeArtistsPage user={user} profiles={profiles} />} />
+            <Route path="/upload" element={<UploadPage user={user} profiles={profiles} />} />
             <Route path="/artists/:profileName" element={<WeArtistsDetailPage user={user} profiles={profiles} messages={messages} setMessages={setMessages}  />} />
-            <Route path="/profile" element={<MeProfilePage user={user} setProfile={setProfile} profile={profile} messages={messages} />} />
+            <Route path="/" element={<MeProfilePage user={user} setProfile={setProfile} profile={profile} messages={messages} />} />
           </Routes>
         </>
         :

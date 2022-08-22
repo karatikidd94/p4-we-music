@@ -13,12 +13,15 @@ export default function NavBar({ user, setUser }) {
     return (
         <nav className='navbar'>
             <span className='nav-logo'>WeMusic</span>
-            <button user={user} to="/profile">MeProfile</button>
-            &nbsp; | &nbsp;
-            <button to="/">WeArtists</button>
-            &nbsp; | &nbsp;    
-            <button to="" onClick={handleLogOut}>Log Out</button>       
-            &nbsp; | &nbsp;
+            <Link user={user} to="/">
+                <button>MeProfile</button>
+            </Link>
+            <Link user={user} to="/artists">
+                <button>WeArtists</button>
+            </Link>  
+            <Link user={user} onClick={handleLogOut} to="">
+                <button>Log Out</button>
+            </Link>
             <span className='welcome-user'>Welcome, {user.name}</span>
         </nav>
     )

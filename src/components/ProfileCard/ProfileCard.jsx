@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 export default function ProfileCard(props) {
+    // const image = URL.createObjectURL(props.profile.img);
     return (
         <>
             <Link to={`/artists/${props.profile.name}`}>
