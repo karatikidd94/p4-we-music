@@ -13,7 +13,7 @@ export default function WeArtistsDetailPage({ user, profiles, messages, setMessa
             <br></br>
             <div className="details-page">
                 <div className="profile-card">
-                    <img src={`${profile.img}`} alt="" />
+                    <img style={{ height: 200, width: 200 }} src={`${profile.img}`} alt="" />
                     <h1>{profile.name}</h1>
                     <h1>Artist Name: {profile.artist}</h1>
                     <h2>Genre: {profile.genre}</h2>

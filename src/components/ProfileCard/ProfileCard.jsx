@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export default function ProfileCard({ profile }) {
     return (
         <>
-            <img src={`${profile.img}`} alt="" />
+            <img style={{ height: 200, width: 200 }} src={`${profile.img}`} alt="" />
             <h1>{profile.name}</h1>
             <h1>Artists Name: {profile.artist}</h1>
             <h3>Genre: {profile.genre}</h3>

@@ -11,15 +11,25 @@ export default function ProfileForm({ user, profile, setProfile }) {
     user: '',
   });
 
+  let imgFile = '';
+
   async function handleAddProfile(evt) {
     evt.preventDefault();
     const updatedProfile = {...newProfile, user: user._id}
+    console.log("Updated Profile: ", updatedProfile);
     const profile = await createProfile(updatedProfile);
     setProfile(profile);
   }
 
   function handleChange(evt) {
     setNewProfile({ ...newProfile, [evt.target.name]: evt.target.value });
+  }
+
+  function handleImgChange(evt) {
+    imgFile = URL.createObjectURL(evt.target.files[0]);
+    console.log("Image File: ", imgFile);
+    setNewProfile({ ...newProfile, img: imgFile });
+    console.log("New Profile: ", newProfile);
   }
 
   return (
@@ -43,7 +53,11 @@ export default function ProfileForm({ user, profile, setProfile }) {
           onChange={handleChange} 
           placeholder='Artist Name'/>
         <label>Genre</label> {/* Users created music type */}
-        <select name="genre" value={newProfile.genre} onChange={handleChange}>
+        <select 
+          name="genre" 
+          value={newProfile.genre} 
+          onChange={handleChange}
+          >
           <option value={"Hip-Hop"}>Hip-Hop</option>
           <option value={"Country"}>Country</option>
           <option value={"Jazz"}>Jazz</option>
@@ -54,20 +68,20 @@ export default function ProfileForm({ user, profile, setProfile }) {
           value={newProfile.spotifyLink} 
           onChange={handleChange}
           placeholder='Paste Spotify Link Here'/>
-        <label>Profile Pic</label> 
+        {/* <label>Profile Pic</label> 
         <input
           name="img"
           value={newProfile.img}
           onChange={handleChange} 
           placeholder='Select a File'/>
-        <button type="submit" >Create Profile</button>
-        {/* <label for="avatar">Choose a profile picture:</label><br />
+        <button type="submit" >Create Profile</button> */}
+        <label for="avatar">Choose a profile picture:</label><br />
         <input type="file"
               name="img"
-              value={newProfile.img}
-              onChange={handleChange}
+              onChange={handleImgChange}
+              // value={newProfile.img}
               accept="image/png, image/jpeg"></input>
-        <button type="submit" >Create Profile</button> */}
+        <button type="submit" >Create Profile</button>
       </form>
     </>
   );
