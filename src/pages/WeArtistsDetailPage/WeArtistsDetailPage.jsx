@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import MessagingForm from "../../components/MessagingForm/MessagingForm";
 import MessageList from "../../components/MessageList/MessageList";
-import DetailCard from "../../components/ProfileCard/ProfileCard";
 import "./WeArtistsDetailPage.css"
 
 export default function WeArtistsDetailPage({ user, profiles, messages, setMessages }) {

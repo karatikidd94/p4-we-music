@@ -9,7 +9,6 @@
 .card {
   background-color: lightgray;
   width: 20vw;
-  padding-top: 2vh;
   border: black;
   border-radius: 5px;
   border-style: solid;
@@ -37,6 +36,7 @@
   border-color: black;
   border-radius: 10px;
   background-color: lightgray;
+  padding: 20px;
 }
 
 .message-form-input {

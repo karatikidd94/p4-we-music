@@ -1,4 +1,6 @@
+
 import ProfileForm from "../../components/ProfileForm/ProfileForm";
+import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import UserMessageList from "../../components/UserMessageList/UserMessageList";
 
 
@@ -12,14 +14,7 @@ export default function MeProfilePage({ user, profile, setProfile, messages }) {
                     <br />
                     <div className="profile-page">
                         <div className="profile-card">
-                            <img src={`${profile.img}`} alt="" />
-                            <h1>{profile.name}</h1>
-                            <h1>Artist Name: {profile.artist}</h1>
-                            <h2>Genre: {profile.genre}</h2>
-                            <a href={`${profile.spotifyLink}`} target="_blank" rel="noreferrer">
-                                <button>Spotify</button>
-                            </a>
-                            
+                            <ProfileCard profile={profile} />
                         </div>
                         <div>
                             <UserMessageList user={user} messages={messages} profile={profile} />

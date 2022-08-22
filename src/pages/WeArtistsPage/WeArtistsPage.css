@@ -13,7 +13,6 @@
   background-color: white;
   margin-bottom: 20px;
   width: 20vw;
-  padding-top: 2vh;
   border: black;
   border-radius: 10px;
   border-style: solid;
@@ -24,9 +23,8 @@
 }
 
 .profile-card {
-  background-color: white;
+  background-color: lightgray;
   width: 20vw;
-  padding-top: 2vh;
   border: black;
   border-radius: 10px;
   border-style: solid;
@@ -58,7 +56,6 @@
 
 .message-form-input {
   width: 54vw;
-  margin: 0 0 20px 0;
 }
 
 .message-form-label {
@@ -74,4 +71,8 @@
 .details-page {
   display: flex;
   justify-content: space-evenly;
+}
+
+.white-header {
+  color: white;
 }
