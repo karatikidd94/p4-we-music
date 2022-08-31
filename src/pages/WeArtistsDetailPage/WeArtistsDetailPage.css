@@ -40,7 +40,7 @@
 }
 
 .message-form-input {
-  width: 54vw;
+  width: 50vw;
 }
 
 .message-form-label {
@@ -71,6 +71,10 @@
 .message-item {
   text-align: left;
   padding-right: 40px;
+}
+
+.center-txt {
+  text-align: center;
 }
 
 

@@ -2,6 +2,7 @@
 import ProfileForm from "../../components/ProfileForm/ProfileForm";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import UserMessageList from "../../components/UserMessageList/UserMessageList";
+import MeFileUpload from "../../components/MeFileUpload/MeFileUpload";
 
 
 export default function MeProfilePage({ user, profile, setProfile, messages }) {
@@ -13,8 +14,13 @@ export default function MeProfilePage({ user, profile, setProfile, messages }) {
                 <>
                     <br />
                     <div className="profile-page">
-                        <div className="profile-card">
-                            <ProfileCard profile={profile} />
+                        <div>
+                            <div className="profile-card">
+                                <ProfileCard profile={profile} />
+                            </div>
+                            <div>
+                                <MeFileUpload />
+                            </div>
                         </div>
                         <div>
                             <UserMessageList user={user} messages={messages} profile={profile} />
